@@ -52,6 +52,47 @@ namespace Quiz_Assignment_1
         }
 
         int sumin = 0, sumex = 0, inIn = 0, inEx = 0;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "CSV(*.csv)|*.csv";
+                bool fileError = false;
+                if(sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (!fileError)
+                    {
+                        try
+                        {
+                            int columnCount = dataGridView1.Columns.Count;
+                            string columnNames = " ";
+                            string[] outputcsv = new string[dataGridView1.Rows.Count + 1];
+                            for (int i = 0; i < columnCount; i++)
+                            {
+                                columnNames += dataGridView1.Columns[i].HeaderText.ToString() + ",";
+                            }
+                            outputcsv[0] += columnNames;
+                            for (int i = 1; (i - 1) < dataGridView1.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < columnCount; j++)
+                                {
+                                    outputcsv[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString();
+                                }
+                            }
+                            File.WriteAllLines(sfd.FileName, outputcsv, Encoding.UTF8);
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error:" + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             int n = dataGridView1.Rows.Add();
