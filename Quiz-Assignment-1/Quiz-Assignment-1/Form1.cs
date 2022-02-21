@@ -17,10 +17,24 @@ namespace Quiz_Assignment_1
             {
                 string[] readAllLine = File.ReadAllLines(openFileDialog.FileName);
                 string readAllText = File.ReadAllText(openFileDialog.FileName);
+                this.dataGridView1.Text = readAllLine[0];
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = textBox2.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox3.Text;
+
+                for(int i = 0; i < readAllText.Length; i++)
+                {
+                    string listRAW = readAllLine[i];
+                    string[] listSplited = listRAW.Split(',');
+                    IncomeAndExpenses list = new IncomeAndExpenses(listSplited[0]);
+                    _ = new IncomeAndExpenses(listSplited[1]);
+                    _ = new IncomeAndExpenses(listSplited[2]);
+                }
             }
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+    private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string filepath = String.Empty;
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -31,10 +45,28 @@ namespace Quiz_Assignment_1
                 {
                     filepath = saveFileDialog.FileName;
 
-                    //save file
-                    File.WriteAllText(filepath, this.textBox1.Text, Encoding.UTF8);
+                //save file
+                File.WriteAllText(filepath, this.textBox1.Text, Encoding.UTF8);
                 }
             }
+        }
+
+        int sumin = 0, sumex = 0, inIn = 0, inEx = 0;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int n = dataGridView1.Rows.Add();
+            dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+            dataGridView1.Rows[n].Cells[1].Value = textBox2.Text;
+            dataGridView1.Rows[n].Cells[2].Value = textBox3.Text;
+
+            inIn = Convert.ToInt32((textBox2.Text).ToString());
+            inEx = Convert.ToInt32((textBox3.Text).ToString());
+
+            sumin = inIn + sumin;
+            sumex = inIn + sumex;
+
+            textBox2.Text = sumin.ToString();
+            textBox3.Text = sumex.ToString();
         }
     }
 }

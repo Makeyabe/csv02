@@ -38,18 +38,18 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1รายการ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1รายรับ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1รายจ่าย = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -138,6 +138,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายการรวม";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "label6";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.TabIndex = 6;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
@@ -152,6 +178,27 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(440, 356);
             this.dataGridView1.TabIndex = 7;
+            // 
+            // Column1รายการ
+            // 
+            this.Column1รายการ.HeaderText = "รายการ";
+            this.Column1รายการ.MinimumWidth = 6;
+            this.Column1รายการ.Name = "Column1รายการ";
+            this.Column1รายการ.Width = 125;
+            // 
+            // Column1รายรับ
+            // 
+            this.Column1รายรับ.HeaderText = "รายรับ";
+            this.Column1รายรับ.MinimumWidth = 6;
+            this.Column1รายรับ.Name = "Column1รายรับ";
+            this.Column1รายรับ.Width = 125;
+            // 
+            // Column1รายจ่าย
+            // 
+            this.Column1รายจ่าย.HeaderText = "รายจ่าย";
+            this.Column1รายจ่าย.MinimumWidth = 6;
+            this.Column1รายจ่าย.Name = "Column1รายจ่าย";
+            this.Column1รายจ่าย.Width = 125;
             // 
             // label1
             // 
@@ -180,23 +227,6 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "รายจ่าย";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
-            this.label4.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(120, 237);
@@ -205,6 +235,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -214,36 +245,6 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "label6";
-            // 
-            // Column1รายการ
-            // 
-            this.Column1รายการ.HeaderText = "รายการ";
-            this.Column1รายการ.MinimumWidth = 6;
-            this.Column1รายการ.Name = "Column1รายการ";
-            this.Column1รายการ.Width = 125;
-            // 
-            // Column1รายรับ
-            // 
-            this.Column1รายรับ.HeaderText = "รายรับ";
-            this.Column1รายรับ.MinimumWidth = 6;
-            this.Column1รายรับ.Name = "Column1รายรับ";
-            this.Column1รายรับ.Width = 125;
-            // 
-            // Column1รายจ่าย
-            // 
-            this.Column1รายจ่าย.HeaderText = "รายจ่าย";
-            this.Column1รายจ่าย.MinimumWidth = 6;
-            this.Column1รายจ่าย.Name = "Column1รายจ่าย";
-            this.Column1รายจ่าย.Width = 125;
             // 
             // Form1
             // 
@@ -272,6 +273,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
