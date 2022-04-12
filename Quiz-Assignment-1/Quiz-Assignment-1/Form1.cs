@@ -53,6 +53,16 @@ namespace Quiz_Assignment_1
 
         int sumin = 0, sumex = 0, inIn = 0, inEx = 0;
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
@@ -87,7 +97,7 @@ namespace Quiz_Assignment_1
                         catch (Exception ex)
                         {
                             MessageBox.Show("Error:" + ex.Message);
-                        }
+                         }
                     }
                 }
             }
